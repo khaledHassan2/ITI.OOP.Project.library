@@ -40,8 +40,27 @@ namespace oopProject.Library_Partials
             
            
         
-        public void RemoveBook()
+       
+      
+
+            public bool RemoveBook(Book book)
         {
+            bool found = false;
+
+            foreach (Book existingBook in Books)
+            {
+                if (existingBook.ID == book.ID ||
+                   (existingBook.Title == book.Title && existingBook.Author == book.Author))
+                {
+                    Books.Remove(existingBook); 
+                    found = true;
+                    break; 
+                }
+            }
+
+            return found; 
         }
+
     }
 }
+
