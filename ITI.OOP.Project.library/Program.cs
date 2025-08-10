@@ -32,7 +32,7 @@ namespace ITI.OOP.Project.library
                     switch ((Options)option)
                     {
                         case Options.AddBook: library.AddBook(); break;
-                        case Options.RemoveBook: library.RemoveBook(); break;
+                      //  case Options.RemoveBook: library.RemoveBook(); break;
                         case Options.AddMember: library.AddMember(); break;
                         case Options.RemoveMember: library.RemoveMember(); break;
                         case Options.BorrowBook: library.BorrowBook(); break;

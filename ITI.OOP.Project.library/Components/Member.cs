@@ -10,6 +10,11 @@ namespace oopProject.Components
     {
         public int ID {  get; set; }
         public string Name{  get; set; } = string.Empty; 
-        public List<Book>? borrowedBooks { get; set; }
+        public List<Book> borrowedBooks { get; set; } = new List<Book>();
+
+        public override string ToString()
+        {
+            return $"ID: {ID}, Name: {Name}, Borrowed Books:{borrowedBooks.Count}";
+        }
     }
 }
