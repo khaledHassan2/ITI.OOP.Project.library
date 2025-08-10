@@ -14,18 +14,42 @@ namespace oopProject.Library_Partials
 
 
 
-        public bool AddBook(Book book)
+        public void AddBook()
         {
-            
-            if (string.IsNullOrWhiteSpace(book.Title))
+            int id;
+            do
             {
-                Console.WriteLine("Book title cannot be empty.");
-                return false;
+                Console.Write("Enter Book ID: ");
             }
+            while (!int.TryParse(Console.ReadLine(), out id));
 
-            Books.Add(book); 
-            return true;
+            string title;
+            do
+            {
+                Console.Write("Enter Book Title: ");
+                title = Console.ReadLine();
+            }
+            while (string.IsNullOrWhiteSpace(title));
+
+            string author;
+            
+            do
+            {
+                Console.Write("Enter Author Name: ");
+                author = Console.ReadLine();
+            }
+            while (string.IsNullOrWhiteSpace(author));
+
+            Book book = new Book();
+            book.ID = id;
+            book.Title = title;
+            book.Author = author;
+
+            Books.Add(book);
+
+            Console.WriteLine($"Book '{title}' by {author} added successfully!");
         }
+
 
 
 
