@@ -11,39 +11,30 @@ namespace oopProject.Library_Partials
     public partial class Library
     {
 
-      
-       
 
-            public bool AddBook(Book book)
+
+
+        public bool AddBook(Book book)
         {
-            bool found = false;
-
-            foreach (Book existingBook in Books)
+            
+            if (string.IsNullOrWhiteSpace(book.Title))
             {
-                if (existingBook.ID == book.ID ||
-                   (existingBook.Title == book.Title && existingBook.Author == book.Author))
-                {
-                    found = true;
-                    break;
-                }
+                Console.WriteLine("Book title cannot be empty.");
+                return false;
             }
 
-            if (found)
-            {
-                return false; 
-            }
-
-            Books.Add(book);
-            return true; 
+            Books.Add(book); 
+            return true;
         }
 
-            
-           
-        
-       
-      
 
-            public bool RemoveBook(Book book)
+
+
+
+
+
+
+        public bool RemoveBook(Book book)
         {
             bool found = false;
 
