@@ -14,7 +14,7 @@
         {
             foreach (var member in Members)
             {
-                Console.WriteLine($"ID: {member.ID}, Name: {member.Name}, Borrowed Books:{member.borrowedBooks}");
+                Console.WriteLine($"ID: {member.ID}, Name: {member.Name}, Borrowed Books:{member.borrowedBooks.Count}");
             }
 
         }

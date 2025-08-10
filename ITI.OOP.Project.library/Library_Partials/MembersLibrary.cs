@@ -55,6 +55,10 @@ namespace oopProject.Library_Partials
             }
             if (member != null)
             {
+                for(int i =0;i<member.borrowedBooks.Count;i++)
+                {
+                    member.borrowedBooks[i].Availability = true;
+                }
                 Members.Remove(member);
             }
             else
