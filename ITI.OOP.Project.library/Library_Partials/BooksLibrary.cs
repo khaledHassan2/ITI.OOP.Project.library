@@ -11,11 +11,35 @@ namespace oopProject.Library_Partials
     public partial class Library
     {
 
-        public void AddBook()
+      
+       
+
+            public bool AddBook(Book book)
         {
+            bool found = false;
+
+            foreach (Book existingBook in Books)
+            {
+                if (existingBook.ID == book.ID ||
+                   (existingBook.Title == book.Title && existingBook.Author == book.Author))
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                return false; 
+            }
+
+            Books.Add(book);
+            return true; 
+        }
+
             
            
-        }
+        
         public void RemoveBook()
         {
         }
