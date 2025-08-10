@@ -58,23 +58,39 @@ namespace oopProject.Library_Partials
 
 
 
-        public bool RemoveBook(Book book)
+        public void RemoveBook()
         {
-            bool found = false;
+            int bookId;
 
-            foreach (Book existingBook in Books)
+            
+            do
             {
-                if (existingBook.ID == book.ID ||
-                   (existingBook.Title == book.Title && existingBook.Author == book.Author))
+                Console.Write("Enter Book ID: ");
+            } while (!int.TryParse(Console.ReadLine(), out bookId));
+
+            
+            Book bookToRemove = null;
+            for (int i = 0; i < Books.Count; i++)
+            {
+                if (Books[i].ID == bookId)
                 {
-                    Books.Remove(existingBook); 
-                    found = true;
-                    break; 
+                    bookToRemove = Books[i];
+                    break;
                 }
             }
 
-            return found; 
+            
+            if (bookToRemove != null)
+            {
+                Books.Remove(bookToRemove);
+                Console.WriteLine("Book removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Book ID does not exist.");
+            }
         }
+
 
     }
 }
