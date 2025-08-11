@@ -16,8 +16,11 @@ namespace oopProject.Library_Partials
 
         public void AddBook()
         {
+            
+
+
             int id;
-            bool flag = false;
+            bool flag =false ;
             do
             {
                 Console.Write("Enter Book ID: ");

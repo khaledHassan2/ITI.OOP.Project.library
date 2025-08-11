@@ -15,6 +15,8 @@ namespace oopProject.Library_Partials
                
                  Console.Write("Enter Member ID: ");
                 flag = int.TryParse(Console.ReadLine(), out x);
+
+                
                 if (flag) 
                 {
                     foreach(Member m in Members)
