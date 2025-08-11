@@ -7,6 +7,7 @@ namespace oopProject.Library_Partials
     {
         public void AddMember()
         {
+            Console.WriteLine("TEST");
             int x;
             do 
             {
