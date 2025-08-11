@@ -7,14 +7,29 @@ namespace oopProject.Library_Partials
     {
         public void AddMember()
         {
-            Console.WriteLine("TEST");
+            
             int x;
+            bool flag = false;
             do 
             {
                
                  Console.Write("Enter Member ID: ");
+                flag = int.TryParse(Console.ReadLine(), out x);
+                if (flag) 
+                {
+                    foreach(Member m in Members)
+                    {
+                        if(m.ID == x)
+                        {
+                            Console.WriteLine("ID is already taken");
+                            flag = false;
+                        }
+                    }
 
-			} while (!int.TryParse(Console.ReadLine(), out x) );
+                }
+
+			} while (!flag);
+            
             string N;
             do
             {
